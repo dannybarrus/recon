@@ -11,6 +11,8 @@ int main()
 	
 	char * szResult = ReverseString(szTest);
 
+	printf(szResult);
+
 	return 0;
 }
 
