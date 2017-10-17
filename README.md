@@ -1,3 +1,2 @@
 # recon
-Devoted to inspecting different coding problems, breaking them down, etc.  
-
+Why the name "Recon"?  I like the idea of searching for information in the field by means of detailed examination.   That is the idea here.  To examine and play with algorithms as a means to improve my skills as a developer.  You will find varying degrees of investigation, and even some notes where I intend to come back to things.  This is as much about what piques my curiousity as anything else.  Also, please note that most often comments will be omitted unless I am making a note to myself or I am submitting something for a formal code review.  I am on the fence as to whether or not notes/comments will be of help to my future self.  The current thought is that not having too much documentation will force me to think about why I did it that way and improve as needed. Any suggestions or feedback are welcome. 
