@@ -1,0 +1,17 @@
+﻿@model IoC_MVC.Models.DevChrgTrackingService
+
+@{
+    ViewBag.Title = "Device Charging Tracker";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Device Charging Tracker</h2>
+Total Charge: @ViewBag.TotalCharge
+<p />
+Capacity: @ViewBag.Capacity
+
+@using (Html.BeginForm("ManuallyAddCharge", "DevChrgTracking"))
+{
+    <input type="text" name="amount" />
+    <input type="submit" value="Add" />
+}
