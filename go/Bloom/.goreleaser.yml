@@ -1,0 +1,49 @@
+# .goreleaser.yml
+#
+# Builds cross-platform binaries and generates GitHub release notes.
+# Run: goreleaser release --snapshot --clean
+# Install: go install github.com/goreleaser/goreleaser/v2@latest
+
+version: 2
+
+project_name: bloom
+
+before:
+  hooks:
+    - go mod tidy
+    - go test ./...
+
+builds:
+  - id: bloom
+    main: ./cmd/bloom
+    binary: bloom
+    env:
+      - CGO_ENABLED=0   # produce statically linked binaries
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    ldflags:
+      - -s -w   # strip debug info -- smaller binary
+      - -X main.version={{.Version}}
+
+archives:
+  - format: tar.gz
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    format_overrides:
+      - goos: windows
+        format: zip
+
+checksum:
+  name_template: "checksums.txt"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^ci:"

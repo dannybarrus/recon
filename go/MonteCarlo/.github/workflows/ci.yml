@@ -1,0 +1,59 @@
+name: Monte Carlo CI
+
+on:
+  push:
+    paths: ["go/montecarlo/**"]
+  pull_request:
+    paths: ["go/montecarlo/**"]
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: go/montecarlo
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.21"
+          cache-dependency-path: go/montecarlo/go.sum
+
+      - name: Verify dependencies
+        run: go mod verify
+
+      - name: Vet
+        run: go vet ./...
+
+      - name: Test with race detector
+        run: go test -race -count=1 -timeout=120s ./...
+
+      - name: Benchmark (informational)
+        run: go test -bench=. -benchmem -run='^$' ./...
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    needs: test
+    defaults:
+      run:
+        working-directory: go/montecarlo
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.21"
+
+      - name: Build binary
+        run: go build -o montecarlo ./cmd/montecarlo
+
+      - name: Smoke test - run all simulations
+        run: ./montecarlo all --trials 100000
+
+      - name: Smoke test - convergence
+        run: ./montecarlo convergence --sim pi --max 1000000 --steps 5

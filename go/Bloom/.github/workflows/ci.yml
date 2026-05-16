@@ -1,0 +1,56 @@
+name: Bloom Filter CI
+
+on:
+  push:
+    paths: ["go/bloom/**"]
+  pull_request:
+    paths: ["go/bloom/**"]
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: go/bloom
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.21"
+          cache-dependency-path: go/bloom/go.sum
+
+      - name: Verify dependencies
+        run: go mod verify
+
+      - name: Vet
+        run: go vet ./...
+
+      - name: Test with race detector
+        run: go test -race -count=1 -timeout=60s ./...
+
+      - name: Benchmark (informational)
+        run: go test -bench=. -benchmem -run='^$' ./...
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    needs: test
+    defaults:
+      run:
+        working-directory: go/bloom
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.21"
+
+      - name: Build binary
+        run: go build -o bloom ./cmd/bloom
+
+      - name: Smoke test
+        run: ./bloom demo --capacity 1000 --fpr 0.01 --trials 5000

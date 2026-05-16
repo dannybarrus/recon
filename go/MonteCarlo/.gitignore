@@ -1,0 +1,10 @@
+# Build output
+dist/
+montecarlo.exe
+
+# Test artifacts
+*.test
+*.out
+
+# Go workspace
+go.work.sum
