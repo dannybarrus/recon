@@ -25,17 +25,15 @@ clearly about what separates a working answer from a deep one.
 
 ## What's here
 
+## What's here
+
 | Folder  | Covers |
 |---------|--------|
-| `cs/`   | C# -- async patterns, coding challenges, DI/IoC, OOP, SOLID, 
-testing, REST API |
-| `tf/`   | Terraform -- fundamentals through production patterns, Azure and 
-AWS including parallel AKS and EKS builds |
-| `go/`   | Go -- a Bloom filter CLI and a Monte Carlo simulation engine, 
-both production-grade with tests, benchmarks, and CI |
-| `cpp/`  | C++ -- problems from interview preparation |
-| `java/` | Java -- problems from interview preparation |
-
+| `cs/`   | C# -- async patterns, coding challenges, DI/IoC, OOP, SOLID, testing, REST API |
+| `tf/`   | Terraform -- fundamentals through production, Azure and AWS including parallel AKS/EKS builds |
+| `go/`   | Go -- Bloom filter CLI and Monte Carlo simulation engine |
+| `cpp/`  | C++ -- interview preparation problems |
+| `java/` | Java -- interview preparation problems |
 ## Origin
 
 The cpp and java folders came first, rooted in interview preparation. 
