@@ -25,21 +25,22 @@ clearly about what separates a working answer from a deep one.
 
 ## What's here
 
-## What's here
-
 | Folder  | Covers |
 |---------|--------|
 | `cs/`   | C# -- async patterns, coding challenges, DI/IoC, OOP, SOLID, testing, REST API |
 | `tf/`   | Terraform -- fundamentals through production, Azure and AWS including parallel AKS/EKS builds |
 | `go/`   | Go -- Bloom filter CLI and Monte Carlo simulation engine |
 | `cpp/`  | C++ -- interview preparation problems |
-| `java/` | Java -- interview preparation problems |
+| `java/` | Java -- Maven-based reference library: algorithms, data structures, collections, streams, OOP, exceptions, concurrency |
+
 ## Origin
 
 The cpp and java folders came first, rooted in interview preparation. 
 A coding challenge gave the repo its name and philosophy. The C# 
 reference library, Terraform implementations, and Go projects are the 
-most recent layer.
+most recent layer -- and java has since grown well past its original 
+interview-prep scope into a fully tested reference library of its own, 
+built on that same foundation.
 
 The IoC container in cs/IoC/ is where the Recon name started. 
 Worth a look.
