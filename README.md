@@ -14,9 +14,7 @@ You will find varying degrees of investigation, and notes where I
 intend to come back to things. This is as much about what piques my 
 curiosity as anything else.
 
-**On comments:** Most are omitted by design. The goal is to return to 
-code cold and reconstruct the reasoning from the code itself. If you 
-cannot, the code was not clear enough. This keeps the work honest.
+**On comments:** Many capture interview questions and reference notes worth keeping, including challenges I actually submitted, like the WTW technical challenge and reverse linked list problems. This keeps the repo useful as a working reference, not just practice.
 
 Some of these implementations also serve as reference examples when 
 onboarding engineers or conducting code reviews, and I draw from this 
