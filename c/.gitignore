@@ -1,0 +1,7 @@
+build/
+build_asan/
+build_tsan/
+*.o
+*.obj
+*.exe
+compile_commands.json
