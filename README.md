@@ -1,11 +1,6 @@
 # recon
 
-Why the name? A hiring manager I was working with had an email address 
-that was a reference to his background as a Marine scout and forward 
-observer. It felt like a fitting nod -- both to his service and to 
-what I hoped to learn from someone with that kind of discipline and 
-attention to detail. The name stuck because it fits the work: examine 
-things carefully in the field as a means to improve.
+Why the name? It's named after a hiring manager I worked with at WTW. His email handle happened to include "scout," and I assumed it was a nod to his time in the Marines. Turns out the real story is funnier: a Google recommendation engine suggested it to him as a teenager based on his name and an interest in Boy Scouts. By the time I learned that, the name had already stuck for good reason anyway. Scouting was pivotal in my own life too, I made Eagle Scout, and the discipline and attention to detail it instilled fits the spirit of the work: examine things carefully in the field as a means to improve.
 
 The philosophy here is to approach problems the way a developer 
 approaches unfamiliar territory -- with curiosity, deliberate 
