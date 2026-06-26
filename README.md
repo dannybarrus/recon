@@ -29,6 +29,13 @@ clearly about what separates a working answer from a deep one.
 | `cpp/`  | C++ -- CMake/GoogleTest reference library: algorithms, data structures, RAII and smart pointers, move semantics, templates |
 | `java/` | Java -- Maven-based reference library: algorithms, data structures, collections, streams, OOP, exceptions, concurrency |
 
+## Also see
+
+[gitops-demo](https://github.com/dannybarrus/gitops-demo.git) -- a self-contained
+ArgoCD/kind GitOps setup, kept as its own repo rather than a subfolder
+here, since the whole mechanism depends on being its own Git source of
+truth, not a piece of a much larger one.
+
 ## Origin
 
 The cpp and java folders came first, rooted in interview preparation. 
